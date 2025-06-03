@@ -1,0 +1,20 @@
+dataset = "ATGCCGTA"
+forwardString = list(dataset.upper())
+def complement(DNAstring):
+    for n, i in enumerate(DNAstring):
+        if i == "A":
+            DNAstring[n] = "T"
+        elif i == "T":
+            DNAstring[n] = "A"
+        elif i == "C":
+            DNAstring[n] = "G"
+        elif i == "G":
+            DNAstring[n] = "C"
+
+    DNAstring.reverse()
+    return ''.join(DNAstring)
+
+# Run the function and print the result
+result = complement(forwardString)
+print("\nReverse Complement:")
+print(result)
