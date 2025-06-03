@@ -1,0 +1,22 @@
+sequence = "ACGTTGCATGTCGCATGATGCATGAGAGCT"
+k = 4
+
+# Convert sequence to uppercase
+DNA = sequence.upper()
+
+# Dictionary to store counts
+counts = {}
+
+# Count all k-mers
+for i in range(len(DNA) - k + 1):
+    kmer = DNA[i:i + k]
+    counts[kmer] = counts.get(kmer, 0) + 1
+
+# Find the highest frequency
+max_count = max(counts.values())
+
+# Collect all k-mers with that frequency
+most_frequent = [kmer for kmer, count in counts.items() if count == max_count]
+
+# Print the result as space-separated
+print(' '.join(most_frequent))
